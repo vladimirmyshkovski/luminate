@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block page_title %}App{% endblock %}
+{% block page_js %}
+    <script src="/pages/site/index/index.js"></script>{% endblock %}
+{% block page_css %}
+    <link rel="stylesheet" href="/pages/site/index/index.css"/>
+
+    <link rel="stylesheet" href="/pages/site/carousel/carousel.css"/>{% endblock %}
+
+{% block page_content %}
+
+{% include 'site/includes/carousel/carousel.html' %}
+
+    <!-- Container
+    ================================================== -->
+<div class="container">
+    <!-- Feauturette
+    ================================================== -->
+
+
+      <div class="row featurette">
+        <div class="col-md-12">
+          <h2 class="featurette-heading" style="text-align: center">Тут либо товары <span class="text-muted">Либо приемущества</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+
+        {% include 'site/includes/featurette/featurette2.html' %}
+
+      <!-- /.feauturette -->
+</div>
+<!-- /.container -->
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %} {% if keyword %} {{keyowrd}}  {% else %}Страница продукции {% endif %} {% endblock %}
+{% block page_js %}
+    <script src="/pages/site/products/products.js"></script>
+{% endblock %}
+    
+{% block page_css %}
+    <link rel="stylesheet" href="/pages/site/products/products.css"/>
+    {% endblock %}
+    
+    
+{% block page_content %}
+
+
+    <div class="products-bg">
+        <div class="container">
+            <h1>Продуктовая страница</h1>
+            <p>Какой-то текст.</p>
+        </div>
+    </div>
+
+
+
+    <!-- Container 
+    ================================================== -->
+<div class="container">
+    
+    <ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+    </ol>
+    <!-- Feauturette 
+    ================================================== -->
+<div class="row">
+{% include 'site/includes/featurette/featurette.html' %}
+</div>
+
+<!-- /.feauturette -->
+</div>
+<!-- /.container -->
+
+{% include 'site/includes/modals/product-modal.html' %}
+
+{% endblock %}

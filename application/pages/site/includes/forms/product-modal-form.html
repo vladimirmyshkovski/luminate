@@ -1,0 +1,40 @@
+
+
+{% from '_form.html' import vertical_field %}
+
+{% block page_css %}
+<link rel="stylesheet" href="/pages/site/includes/modals/product-modal.css"/>
+{% endblock %}
+
+        <div class="row">
+        <div class="col-lg-12">
+
+      <form class="form-signin" id="ProductForm" action="{{ url_for('bot.send') }}" method="POST">
+        {{ form.csrf_token() }}
+        <h2 class="form-signin-heading" style="text-align: center">Получите скидку, или идите нахуй отсюдова!</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        {{ vertical_field(form.email, id="inputEmail", class="form-control", placeholder="Адрес электронной почты", required="", autofocus="", type="email" ) }}
+        <label for="input-phone" class="sr-only">Phone</label>
+        {{ vertical_field(form.phone, class="form-control", placeholder="Номер телефона", required="", type="text", id="input-phone") }}
+        <label for="input-id" class="sr-only">Id</label>
+        {{ vertical_field(form.id, type="hidden", required="", id="input-id") }}
+        <button class="btn btn-lg btn-primary btn-block"
+                type="submit" >Заказать</button>
+
+      </form>
+
+    </div>
+      </div>
+
+{% block page_js %}
+<script src="/pages/site/includes/forms/product-modal-form.js"></script>
+<script src="/pages/site/includes/forms/inputmask.js"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script> 
+{% endblock %}
+
+
+    
+            </div>
+        </div>
+    </div>
+
