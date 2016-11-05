@@ -14,10 +14,10 @@
         <div class="table">
           <table class="table">
             <tbody>
-              {% for special in p.specials %}
+              {% for special in p.specials[1:-1].split(", ") %}
               <tr>
-                <td>{{ special }}</td>
-                <td style="text-align: right">{{ p.specials[special] }}</td>
+                <td>{{ special.split(':')[0][1:-1] }}</td>
+                <td style="text-align: right">{{ special.split(':')[1][2:-1] }}</td>
               </tr>
               {% endfor %}
             </tbody>

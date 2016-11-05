@@ -49,7 +49,8 @@ def parse():
         spamReader2 = csv.reader(open('/home/narnikgamarnik/PycharmProjects/my_phyton3_projects/parsers/result/' + i, newline=''))
         next(spamReader2)
         for row in spamReader2:
-            product = Product(name = row[0], image = row[1], category = row[3], size = row[4], images = json.loads(row[5]), specials = json.loads(row[6]))
+            print(row[6])
+            product = Product(name = row[0], image = row[1], category = row[3], size = row[4], images = json.dumps((row[5])), specials = row[6])
             db.session.add(product)
             db.session.commit()
    
@@ -58,7 +59,7 @@ def parse():
         spamReader3 = csv.reader(open('/home/narnikgamarnik/PycharmProjects/my_phyton3_projects/parsers/results/' + i, newline=''))
         next(spamReader3)
         for row in spamReader3:
-            product = Product(name = row[1], image = row[2], category = row[0], size = row[3])
+            product = Product(name = row[1], image = json.dumps((row[2])), category = row[0], size = row[3])
             db.session.add(product)
             db.session.commit()
     
