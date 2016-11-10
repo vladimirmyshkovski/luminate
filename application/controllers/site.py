@@ -35,25 +35,24 @@ def parse():
     
     """Parse"""
     import csv
-    
-    spamReader1 = csv.reader(open('/home/narnikgamarnik/PycharmProjects/my_phyton3_projects/parsers/figure2.csv', newline=''))
-    next(spamReader1)
+    '''
+    spamReader1 = csv.reader(open('/home/narnik/Программы/BS4/sima-land/sima-land2.csv', newline=''))
+    #next(spamReader1)
     for row in spamReader1:
-        product = Product(name = row[1], image = row[0], category='Фигуры', size=row[2])
+        product = Product(name = row[0], category=row[1], image = row[2],  specials=row[3])
         db.session.add(product)
         db.session.commit()
         
-    
+    '''
     from os import listdir
-    for i in listdir('/home/narnikgamarnik/PycharmProjects/my_phyton3_projects/parsers/result'):
-        spamReader2 = csv.reader(open('/home/narnikgamarnik/PycharmProjects/my_phyton3_projects/parsers/result/' + i, newline=''))
-        next(spamReader2)
+    for i in listdir('/home/narnik/Программы/BS4/sima-land/results/'):
+        spamReader2 = csv.reader(open('/home/narnik/Программы/BS4/sima-land/results/' + i, newline=''))
+        #next(spamReader2)
         for row in spamReader2:
-            print(row[6])
-            product = Product(name = row[0], image = row[1], category = row[3], size = row[4], images = json.dumps((row[5])), specials = row[6])
+            product = Product(name = row[0], category=row[1], image = row[2],  specials=row[3])
             db.session.add(product)
             db.session.commit()
-   
+    '''
     from os import listdir
     for i in listdir('/home/narnikgamarnik/PycharmProjects/my_phyton3_projects/parsers/results/'):
         spamReader3 = csv.reader(open('/home/narnikgamarnik/PycharmProjects/my_phyton3_projects/parsers/results/' + i, newline=''))
@@ -62,7 +61,7 @@ def parse():
             product = Product(name = row[1], image = json.dumps((row[2])), category = row[0], size = row[3])
             db.session.add(product)
             db.session.commit()
-    
+    ''' 
     return render_template('layout.html')
 
 @bp.context_processor

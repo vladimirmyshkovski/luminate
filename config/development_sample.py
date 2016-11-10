@@ -7,4 +7,4 @@ class DevelopmentConfig(Config):
     DEBUG = True
 
     # SQLAlchemy config
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:@localhost/app"
+    SQLALCHEMY_DATABASE_URI = "sqlite:////tmp/test.db"

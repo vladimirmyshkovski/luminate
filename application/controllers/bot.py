@@ -30,7 +30,7 @@ def send():
         request.method == 'POST'
         request.data == params
     return redirect(url_for('mail.send'))
-
+'''
 def get(msg):
     from pprint import pprint
     response = bot.getUpdates()
@@ -49,3 +49,4 @@ def get(msg):
         
         
 bot.message_loop(get, 999)
+'''
