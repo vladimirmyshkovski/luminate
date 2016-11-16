@@ -9,6 +9,7 @@ bp = Blueprint('site', __name__)
 
 
 @bp.route('/')
+@bp.route('/index')
 def index():
     """Index page."""
     return render_template('site/index/index.html')
