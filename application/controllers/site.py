@@ -67,6 +67,5 @@ def parse():
 
 @bp.context_processor
 def menu():
-    menu = {i.category for i in Product.query.group_by(Product.id, Product.category).all()}
-    print(menu)
+    menu = {i.category for i in Product.query.group_by(Product.id, Product.category).all()} 
     return dict(menu=menu)
