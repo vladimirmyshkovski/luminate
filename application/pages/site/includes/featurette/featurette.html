@@ -1,7 +1,13 @@
 {% for p in product %}
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="{{p.image}}" alt="{{p.name}}" style="width: 150%; height: 150%">
+      {% if p.image %}
+        <img src="{{p.image}}" alt="{{p.name}}" style="width: 150%; height: 150%">
+      {% endif %}
+      
+      {% if p.images %}
+         <img src="{{(p.images[1:-1].split(',')[0])[1:-1]}}" alt="{{p.name}}" style="width: 150%; height: 150%">
+      {% endif %}
       <div class="caption">
         <h3>{{p.name}}</h3>
         {% if p.size %}
