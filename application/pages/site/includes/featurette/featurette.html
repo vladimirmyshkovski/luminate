@@ -1,6 +1,6 @@
 {% for pr in product|batch(3, '&nbsp;') %}
   <div class="row">
-  {% for p in pr %}
+{% for p in pr if p.id %}
     <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       {% if p.image %}
@@ -58,4 +58,3 @@
 {% endfor %}
 </div>
 {% endfor %}
-
