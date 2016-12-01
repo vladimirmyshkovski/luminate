@@ -33,9 +33,9 @@ def send():
         db.session.commit()
         
                 
-        msg = Message("Заявка  с  сайта " + str(request.url_root),
+        msg = Message("Заявка" + str(request.url_root),
         sender="SiegHeil@1488.hh",
-        recipients=["narnikgamarnikus@gmail.com"])
+        recipients=["illumiarts@gmail.com"])
         msg.body = "Заявка со страницы " + str(request.base_url) + "/n" + "E-mail " + str(email) + "/n" + "Phone " + str(phone) + "/n" + "ID" + str(id) + "/n" + "Product name " + str(product_name)
         msg.html = "<h1>Заявка со страницы "  + str(request.base_url)  +  "</h1>" + "<p>E-mail " + str(email) + "</p>" +  "<p>Phone "  + str(phone) + "</p>" + "<p>ID " + str(id) + "</p>" + "<p>Product name " + str(product_name) + "</p>"
         

@@ -9,9 +9,9 @@
         <div class="row">
         <div class="col-lg-12">
 
-      <form class="form-signin" id="ProductForm" action="{{ url_for('bot.send') }}" method="POST">
+      <form class="form-signin" id="ProductForm" action="{{ url_for('mail.send') }}" method="POST">
         {{ form.csrf_token() }}
-        <h2 class="form-signin-heading" style="text-align: center">Получите скидку, или идите нахуй отсюдова!</h2>
+        <h2 class="form-signin-heading" style="text-align: center">Получите Новогоднюю скидку!</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         {{ vertical_field(form.email, id="inputEmail", class="form-control", placeholder="Адрес электронной почты", required="", autofocus="", type="email" ) }}
         <label for="input-phone" class="sr-only">Phone</label>
