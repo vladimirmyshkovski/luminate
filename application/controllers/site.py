@@ -40,6 +40,7 @@ def delete():
     product = Product.query.filter_by(category='narnik').first()
     db.session.delete(product)
     db.session.commit()
+    return 'OK'
 
 
 @bp.route('/parse')
