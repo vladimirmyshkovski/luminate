@@ -1,5 +1,7 @@
-{% for p in product %}
-  <div class="col-sm-6 col-md-4">
+{% for pr in product|batch(3, '&nbsp;') %}
+  <div class="row">
+  {% for p in pr %}
+    <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       {% if p.image %}
         <img src="{{p.image}}" alt="{{p.name}}" style="width: 150%; height: 150%">
@@ -9,7 +11,7 @@
          <img src="{{(p.images[1:-1].split(',')[0])[1:-1]}}" alt="{{p.name}}" style="width: 150%; height: 150%">
       {% endif %}
       <div class="caption">
-        <h3>{{p.name}}</h3>
+        <h4 style="text-align: center">{{p.name}}</h3>
         {% if p.size %}
         {% for i in p.size[1:-1].split("', '") %}
         <p>{{i}}</p>
@@ -17,24 +19,42 @@
         {% else %}
         {% endif %}
         
+        
         {% if p.specials %}
+        
         <div class="table">
           <table class="table">
             <tbody>
-              {% for special in p.specials[1:-1].split(", ") %}
-              <tr>
-                  <td style="border-top: 0px">{{special[1:-1]}}</td>
-              </tr>
+              {% if p.specials[0] == '[' %}
+              {% for special in p.specials[1:-1].split(',') %}
+                  <tr>
+                    <td style="border-top: 0px">{{special.replace("'","")}}</td>
+                  </tr>
               {% endfor %}
+              {% else %}
+              {% for special in p.specials[1:-1].split(',') %}
+              <!--p>{#{ special.replace("'", "")[0:6] }#}</p-->
+              {% if special.replace("'", "")[0:6] =='Цвета:' %}
+              {% elif special.replace("'", "")[0:6] == ' backg' %}
+              {% elif special.replace("'", "")[0:6] == ' Цвета'%}
+              {% else %}
+                <tr>
+                  <td style="border-top: 0px">{{ special.replace("'", "") }}</td>
+                  <tr>
+              {% endif %}
+              {% endfor %}
+              {% endif %}
             </tbody>
           </table>
         </div>
         {% else %}
         {% endif %}
-        <p><span class="label label-{{ loop.cycle('success', 'danger') }} ">{{ loop.cycle('Скидка', 'Хуидка') }}</span></p>
+        <p><span class="label label-{{ loop.cycle('success', '', 'danger') }} ">{{ loop.cycle('Скидка','', 'Акция') }}</span></p>
         <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#product-modal" id="{{p.id}}" onclick="reply_click(this);">Заказать</a>
-           <a href="#" class="btn btn-default" role="button">Сделать возврат</a></p>
+           <a href="#" class="btn btn-default" role="button">Получить скидку!</a></p>
       </div>
     </div>
   </div>
+{% endfor %}
+</div>
 {% endfor %}

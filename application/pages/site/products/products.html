@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block page_title %} {% if keyword %} {{keyowrd}}  {% else %}Страница продукции {% endif %} {% endblock %}
+{% block page_title %} {% if keyword %} {{ keyword }}  {% else %}Страница продукции {% endif %} {% endblock %}
 {% block page_js %}
     <script src="/pages/site/products/products.js"></script>
 {% endblock %}
@@ -15,8 +15,7 @@
 
     <div class="products-bg">
         <div class="container">
-            <h1>Продуктовая страница</h1>
-            <p>Какой-то текст.</p>
+          <h1>{{ keyword }}</h1>
         </div>
     </div>
 
@@ -27,9 +26,8 @@
 <div class="container">
     
     <ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Library</a></li>
-  <li class="active">Data</li>
+  <li><a href="/">Главная</a></li>
+  <li class="active">{{ keyword }}</li>
     </ol>
     <!-- Feauturette 
     ================================================== -->

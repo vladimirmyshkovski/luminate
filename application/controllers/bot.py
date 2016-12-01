@@ -19,13 +19,13 @@ bot.setWebhook()
 
 @bp.route('/send', methods=['POST'])
 def send():
-    if request.method == "POST":     
+    if request.method == "POST":
         params = request.form
         email = params['email']
         phone = params['phone']
         id = params['id']
         bot.sendMessage(169641544, phone + "\n" + email)
-        
+
         request.path == 'mail/send'
         request.method == 'POST'
         request.data == params
@@ -41,12 +41,12 @@ def get(msg):
 
     if content_type == 'text':
         bot.sendMessage(chat_id, msg['text'])
-        
 
-    
+
+
     if command == '/get':
         bot.sendMessage(169641544, 'hello')
-        
-        
+
+
 bot.message_loop(get, 999)
 '''

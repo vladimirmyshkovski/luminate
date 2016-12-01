@@ -1,13 +1,13 @@
-{% for i in range(3) %}
+{% for i in range(2) %}
     <hr class="featurette-divider">
-
+    {% set b = ('<br>') %}
       <div class="row featurette">
         <div class="col-md-7 {{ loop.cycle('', 'col-md-push-5')}}">
-          <h2 class="featurette-heading">Тут либо товары <span class="text-muted">Либо приемущества</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading"> {{ loop.cycle('Cветовые украшения для любого праздника', 'Наши возможности:')}} </h2>
+          <p class="lead">{{ loop.cycle('Мы уже много лет работаем на рынке светотехники, и успели зарекомендовать себя как надёжного, заслуживающего доверия продавца. Для покупателей предусмотрена система скидок, а постоянных клиентов ждут приятные сюрпризы к праздникам. ', 'Разработка оптимального дизайн-проекта,    Новогоднее оформление фасадов зданий,    магазинов и офисных центров,     Готовые концепции декоративного оформления, Подсветка новогодних елей и деревьев, Установка систем освещения ')}} </p>
         </div>
         <div class="col-md-5 {{ loop.cycle('', 'col-md-pull-7')}}">
-          <img class="featurette-image img-responsive center-block" src="https://i1.sndcdn.com/artworks-000101224158-v3cgry-t500x500.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" src="{{ loop.cycle('https://pp.vk.me/c637518/v637518855/1bfb8/MB8_Ks6eyjE.jpg', 'https://pp.vk.me/c637518/v637518855/1bfae/ZdXuw3T2e3s.jpg')}}"  alt="Generic placeholder image">
         </div>
       </div>
 {% endfor %}

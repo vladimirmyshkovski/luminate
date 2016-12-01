@@ -22,7 +22,7 @@ class Config(object):
     # See:
     # https://pythonhosted.org/Flask-SQLAlchemy/config.html#connection-uri-format
     # http://docs.sqlalchemy.org/en/rel_0_9/core/engines.html#database-urls
-    SQLALCHEMY_DATABASE_URI = "sqlite:////tmp/test.db"
+    SQLALCHEMY_DATABASE_URI = "sqlite:////home/narnik/Программы/FlaskProjects/luminate/db/production.sqlite3"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Flask-DebugToolbar
@@ -33,14 +33,14 @@ class Config(object):
 
     # Host string, used by fabric
     HOST_STRING = "root@12.34.56.78"
-    
+
     # Flask_mail configuration
-    MAIL_SERVER = "smtp.gmail.com" 
+    MAIL_SERVER = "smtp.gmail.com"
     MAIL_PORT = 465
     MAIL_USE_SSL = True
     MAIL_USERNAME = 'narnikgamarnikus@gmail.com'  ## CHANGE THIS
     MAIL_PASSWORD = 'nikogdanesdavatsa'
-    
+
     # Telegram_bot
     TOKEN = '285591958:AAF5tUpkm1vay_tuV9wwBEPFtC-OPgUJLVI'
 
