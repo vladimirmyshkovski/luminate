@@ -32,13 +32,8 @@ class Config(object):
     SENTRY_DSN = ''
 
     # Host string, used by fabric
-<<<<<<< HEAD
-    HOST_STRING = "root@12.34.56.78"
-
-=======
     HOST_STRING = "root@185.87.193.188"
     
->>>>>>> 3944cec5b7858a599c60243e8191fbec740b3052
     # Flask_mail configuration
     MAIL_SERVER = "smtp.gmail.com"
     MAIL_PORT = 465
