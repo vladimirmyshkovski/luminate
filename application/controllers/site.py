@@ -37,7 +37,7 @@ def products(keyword):
 
 @bp.route('/delete')
 def delete():
-    product = Product.query.filter_by(category='narnik').first()
+    product = Product.query.filter_by(category='Светодиодный дюралайт').first()
     db.session.delete(product)
     db.session.commit()
     return 'OK'
@@ -46,22 +46,28 @@ def delete():
 @bp.route('/parse')
 def parse():
     db.create_all()
-
+    import csv
+    Reader = csv.reader(open('/home/narnik/duralite.csv', newline=''))
+    for row in Reader:
+        product = Product(name = row[0], specials = row[3], category = row[1], image = row[2])
+        db.session.add(product)
+        db.session.commit()
     """Parse"""
+    '''
     import csv
     spamReader = csv.reader(open('/home/narnik/Программы/BS4/neoneon/www.neoneon.ru.csv', newline=''))
     for row in spamReader:
         product = Product(name = row[0], specials = row[1], images = row[2], category = row[3])
         db.session.add(product)
         db.session.commit()
-    '''
+
+
     spamReader1 = csv.reader(open('/home/narnik/Программы/BS4/sima-land/sima-land2.csv', newline=''))
     #next(spamReader1)
     for row in spamReader1:
         product = Product(name = row[0], category=row[1], image = row[2],  specials=row[3])
         db.session.add(product)
         db.session.commit()
-    '''
 
 
     from os import listdir
@@ -72,7 +78,7 @@ def parse():
             product = Product(name = row[0], category=row[1], image = row[2],  specials=row[3])
             db.session.add(product)
             db.session.commit()
-    '''
+
 
     from os import listdir
     for i in listdir('/home/narnikgamarnik/PycharmProjects/my_phyton3_projects/parsers/results/'):
