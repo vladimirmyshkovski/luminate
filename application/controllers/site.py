@@ -37,11 +37,11 @@ def products(keyword):
 
 @bp.route('/delete')
 def delete():
-    '''
-    product = Product.query.filter_by(category='Светодиодный дюралайт').first()
+    
+    product = Product.query.filter_by(category='Дюралайт').first()
     db.session.delete(product)
     db.session.commit()
-    '''
+    
     return 'OK'
 
 

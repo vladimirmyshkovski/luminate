@@ -50,9 +50,9 @@
         {% else %}
         {% endif %}
 	{% if p.category == 'Светодиодный дюралайт'%}
-	<p><span class="label label-{{ loop.cycle('success', 'danger')}}">{{ loop.cycle('Скидка', 'Акция') }}</span></p>
+	<p><span class="label label-{{ loop.cycle('success', 'danger')}}">{{ loop.cycle('', 'Акция') }}</span></p>
 	{% else %}
-        <p><span class="label label-{{ loop.cycle('success', '', 'danger') }} ">{{ loop.cycle('Скидка','', 'Акция') }}</span></p>
+        <p><span class="label label-{{ loop.cycle('success', '', 'danger') }} ">{{ loop.cycle('','', 'Акция') }}</span></p>
 	{% endif %}
 	<p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#product-modal" id="{{p.id}}" onclick="reply_click(this);">Заказать</a>
            <a href="#" class="btn btn-default" role="button">Получить скидку!</a></p>
