@@ -22,3 +22,8 @@ class ProductForm(Form):
             else:
                 self.user = user
     '''
+class SaleForm(Form):
+    """Form for product order"""
+    email = StringField('')
+    phone = PasswordField('')
+    id = StringField('')

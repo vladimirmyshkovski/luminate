@@ -1,7 +1,7 @@
 # coding: utf-8
 from flask import (render_template,
                    Blueprint)
-from ..forms import ProductForm
+from ..forms import ProductForm, SaleForm
 from ..models import Product, db
 import json
 
@@ -12,7 +12,8 @@ bp = Blueprint('site', __name__)
 @bp.route('/index')
 def index():
     """Index page."""
-    return render_template('site/index/index.html')
+    form = SaleForm()
+    return render_template('site/index/index.html', form=form)
 
 
 @bp.route('/о нас')

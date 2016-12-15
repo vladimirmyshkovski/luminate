@@ -1,4 +1,5 @@
-$("#input-phone").click( function (){
+$(document).ready(function(){
+    $("#input-phone").click( function (){
     $(this).mask("375(99)999-99-99");
     });
 $("#input-phone").focus( function (){
@@ -6,7 +7,7 @@ $("#input-phone").focus( function (){
 });
 
 $(function() {
-    $('#ProductForm').ajaxForm(function() {
+    $('#SaleForm').ajaxForm(function() {
          $.getJSON($SCRIPT_ROOT, {
     //type : "POST",
     //url : "{{ url_for('mail.send') }}",
@@ -20,3 +21,5 @@ $(function() {
         });
     });
 });
+})
+

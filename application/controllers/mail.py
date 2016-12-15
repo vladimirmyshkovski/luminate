@@ -24,7 +24,6 @@ def send():
         phone = params['phone']
         id = params['id']
         product_name = Product.query.get(id)
-        print('sex')
 
         db.create_all()
         
@@ -41,7 +40,7 @@ def send():
         
         mail.send(msg)
                 
-        return str(request.form)
+        return str(request.form) and redirect(url_for('site.index'))
     else:
         return redirect(url_for('site.index'))
     
