@@ -2,7 +2,9 @@
 
 {% block page_title %}ИллюмиАрт - Искусство создавать праздник!{% endblock %}
 {% block page_js %}
-    <script src="/pages/site/index/index.js"></script>{% endblock %}
+    <script src="/pages/site/index/index.js"></script>
+    <script src="/pages/site/includes/forms/sale-modal-form.js"></script>
+{% endblock %}
 {% block page_css %}
     <link rel="stylesheet" href="/pages/site/index/index.css"/>
 
@@ -25,11 +27,14 @@
           <p class="lead" style="text-align: center; font-size: 22px;">Искусство создавать праздник</p>
       </div>
     </div>
-	{% include 'site/includes/fullwidth/fullwidth.html'%}
+	      {% include 'site/includes/fullwidth/fullwidth.html'%}
         {% include 'site/includes/featurette/featurette2.html'%}
+        {% include 'site/includes/modals/sale-modal.html' %}
+
 
 
         <!-- feauturette -->
 </div>
 <!--/container -->
 {% endblock %}
+

@@ -13,6 +13,7 @@ $(function() {
     //data: JSON.stringify(data, null, '\t'),
     //contentType: 'application/json;charset=UTF-8',
     success: function(result) {
+        alert('fucking fuckers!!!!!!!!')
         console.log(result);
         $('#product-modal').modal('toggle');
 
