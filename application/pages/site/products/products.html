@@ -12,6 +12,10 @@
     
 {% block page_content %}
 
+          {% include 'site/includes/fullwidth/fullwidth.html'%}
+          {% include 'site/includes/modals/sale-modal.html' %}
+
+
 
     <div class="products-bg">
         <div class="container">
@@ -40,5 +44,6 @@
 <!-- /.container -->
 
 {% include 'site/includes/modals/product-modal.html' %}
+
 
 {% endblock %}
