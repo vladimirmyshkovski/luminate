@@ -12,38 +12,44 @@ bp = Blueprint('site', __name__)
 @bp.route('/index')
 def index():
     """Index page."""
-    form = SaleForm()
-    return render_template('site/index/index.html', form=form)
+    saleform = SaleForm()
+    return render_template('site/index/index.html', saleform=saleform)
 
 
 @bp.route('/о нас')
 def about():
     """About page."""
-    return render_template('site/about/about.html')
+    saleform = SaleForm()
+    return render_template('site/about/about.html', saleform=saleform)
+
 
 @bp.route('/контакты')
 def contacts():
+    saleform = SaleForm()
     """Contacts page."""
-    return render_template('site/contacts/contacts.html')
+    return render_template('site/contacts/contacts.html', saleform=saleform)
+
 
 @bp.route('/<keyword>')
 def products(keyword):
-    form = ProductForm()
+    productform = ProductForm()
+    saleform = SaleForm()
     product = Product.query.filter_by(category=keyword)
     return render_template('site/products/products.html',
-                           form=form,
-                           product=product,
-                           keyword=keyword)
+        productform=productform,
+        saleform=saleform,
+        product=product,
+        keyword=keyword)
 
 
 @bp.route('/delete')
 def delete():
-    
+    '''
     product = Product.query.filter_by(category='Дюралайт').first()
     db.session.delete(product)
     db.session.commit()
-    
-    return 'OK'
+    '''
+    return redirect(url_for('site.index'))
 
 
 @bp.route('/parse')
