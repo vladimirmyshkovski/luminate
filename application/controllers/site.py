@@ -44,12 +44,13 @@ def products(keyword):
 
 @bp.route('/delete')
 def delete():
+	'''
     product = Product.query.filter_by(category='Пластиковые шары').first()
     db.session.delete(product)
     db.session.commit()
     
     return redirect(url_for('site.delete'))
-
+	'''
 
 @bp.route('/parse')
 def parse():
