@@ -1,6 +1,6 @@
 # coding: utf-8
 from flask import (render_template,
-                   Blueprint)
+                   Blueprint, redirect, url_for)
 from ..forms import ProductForm, SaleForm
 from ..models import Product, db
 import json
@@ -44,12 +44,11 @@ def products(keyword):
 
 @bp.route('/delete')
 def delete():
-    
-    product = Product.query.filter_by(category='Пластиковые шары').all()
+    product = Product.query.filter_by(category='Пластиковые шары').first()
     db.session.delete(product)
     db.session.commit()
     
-    return redirect(url_for('site.index'))
+    return redirect(url_for('site.delete'))
 
 
 @bp.route('/parse')
