@@ -18,9 +18,9 @@ def deploy():
                 run('pip install -r requirements.txt')
                 #run('python manage.py db upgrade')
                 run('python manage.py build')
-            run('supervisorctl restart app')
+            run('supervisorctl restart illumiart')
 
 
 def restart():
     env.host_string = config.HOST_STRING
-    run('supervisorctl restart app')
+    run('supervisorctl restart illumiart')
