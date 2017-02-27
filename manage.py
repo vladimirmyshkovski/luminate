@@ -38,6 +38,14 @@ def live():
 
 
 @manager.command
+def create_all():
+    with app.app_context():
+        print('Creating all ...')
+        db.create_all()
+    print('All is created!!')
+
+
+@manager.command
 def build():
     """Use FIS to compile assets."""
     os.system('gulp')
