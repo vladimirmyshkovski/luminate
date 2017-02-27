@@ -8,7 +8,7 @@ host_string = config.HOST_STRING
 
 def deploy():
     env.host_string = config.HOST_STRING
-    with cd('/var/www/illumiart.by'):
+    with cd('/var/www/luminate'):
         with shell_env(MODE='PRODUCTION'):
             run('git reset --hard HEAD')
             run('git pull')
