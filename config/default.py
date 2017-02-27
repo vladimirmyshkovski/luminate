@@ -1,12 +1,17 @@
 # coding: utf-8
 import os
-
+import os.path as op
 
 class Config(object):
     """Base config class."""
     # Flask app config
-    DEBUG = False
+    DEBUG = True
     TESTING = False
+    CSRF_ENABLED = False
+    WTF_CSRF_ENABLED = False
+    CSRF_CHECK_DEFAULT = False
+    WTF_CSRF_SECRET_KEY = "\xb5\xb3}#\xb7A\xcac\x9d0\xb6\x0f\x80z\x97\x00\x1e\xc0\xb8+\xe9)\xf0}"
+
     SECRET_KEY = "\xb5\xb3}#\xb7A\xcac\x9d0\xb6\x0f\x80z\x97\x00\x1e\xc0\xb8+\xe9)\xf0}"
     PERMANENT_SESSION_LIFETIME = 3600 * 24 * 7
     SESSION_COOKIE_NAME = 'app_session'
@@ -43,4 +48,7 @@ class Config(object):
 
     # Telegram_bot
     TOKEN = '285591958:AAF5tUpkm1vay_tuV9wwBEPFtC-OPgUJLVI'
-
+    EDITS_URL = '/edits'
+    EDITS_SUMMERNOTE = False
+    EDITS_PREVIEW = True
+    EDITS_PATH = op.join(op.dirname(op.abspath(__file__)), 'edits.json')

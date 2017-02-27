@@ -21,8 +21,15 @@
 
       <div class="row featurette">
         <div class="col-md-12">
-          <h2 class="featurette-heading" style="text-align: center">Вас приветствует компания <span class="text-muted">ИллюмиАрт</span></h2>
-          <p class="lead" style="text-align: center; font-size: 22px;">Искусство создавать праздник</p>
+          <h2 class="featurette-heading" style="text-align: center">
+          {% editable 'Main description' %}
+          Вас приветствует компания ИллюмиАрт
+          {% endeditable %}</h2>
+          <p class="lead" style="text-align: center; font-size: 22px;">
+          {% editable 'Main text' %}
+          Искусство создавать праздник
+          {% endeditable %}
+          </p>
       </div>
     </div>
 	      {% include 'site/includes/fullwidth/fullwidth.html'%}

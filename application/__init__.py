@@ -80,7 +80,8 @@ def create_app():
     register_hooks(app)
     register_mail(app)
     register_slack(app)
-    
+    register_edits(app)
+    register_csrf(app)
 
     return app
 
@@ -149,6 +150,21 @@ def register_mail(app):
     from .utils.mail import mail
 
     mail.init_app(app)
+
+
+def register_edits(app):
+    """Register Flask-edits."""
+    from .utils.edits import edits
+
+    edits.init_app(app)
+
+
+def register_csrf(app):
+    """Register CRSF."""
+    from .utils.csrf import csrf
+
+    csrf.init_app(app)
+
 
 def register_slack(app):
     """Register slack."""

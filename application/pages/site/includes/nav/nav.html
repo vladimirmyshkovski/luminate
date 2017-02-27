@@ -48,12 +48,14 @@
             </form-->
 
 	    <ul class="nav navbar-nav navbar-right">
+        {% editable 'phones in header' %}
             <li>
 	  		   <a href="tel:+375447227222">+375447227222</a>
 		    </li>
             <li>
                <a href="tel:+375291993921">+375291993921</a>
             </li>
+        {% endeditable %}
         {% if g.user %}
 
                     <li id="nav-settings">
