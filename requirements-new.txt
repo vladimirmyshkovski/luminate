@@ -52,6 +52,6 @@ SQLAlchemy==1.1.2
 telepot==10.0
 tornado==4.4.2
 urllib3==1.18
-Werkzeug==0.11.11
+Werkzeug==0.15.3
 wrapt==1.10.8
 WTForms==2.1
