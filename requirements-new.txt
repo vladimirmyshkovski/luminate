@@ -34,7 +34,7 @@ multidict==2.1.2
 nose==1.3.7
 paramiko==2.0.2
 permission==0.3.0
-Pillow==3.0.0
+Pillow==8.1.1
 psycopg2==2.6.2
 pyasn1==0.1.9
 pycparser==2.16
