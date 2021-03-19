@@ -23,7 +23,7 @@ glob2==0.4.1
 gunicorn==19.3.0
 idna==2.1
 itsdangerous==0.24
-Jinja2==2.8
+Jinja2==2.11.3
 lazy-object-proxy==1.2.2
 livereload==2.4.0
 logilab-common==1.2.2
